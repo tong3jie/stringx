@@ -45,3 +45,11 @@ func FormatInt64(i int64) string {
 func FormatBool(b bool) string {
 	return strconv.FormatBool(b)
 }
+
+func FormatFloat64(i float64) string {
+	return strconv.FormatFloat(i, 'f', -1, 64)
+}
+
+func FormatFloat32(i float32) string {
+	return strconv.FormatFloat(float64(i), 'f', -1, 32)
+}
