@@ -1,6 +1,8 @@
 package stringx
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func ParseUint(s string) uint {
 	i, _ := strconv.ParseUint(s, 10, 0)
@@ -65,4 +67,19 @@ func ParseFloat32(s string) float32 {
 func ParseFloat64(s string) float64 {
 	i, _ := strconv.ParseFloat(s, 32)
 	return i
+}
+
+func S2Int[T Int](s string) T {
+	i, _ := strconv.ParseInt(s, 10, 0)
+	return T(i)
+}
+
+func S2Uint[T Uint](s string) T {
+	i, _ := strconv.ParseUint(s, 10, 0)
+	return T(i)
+}
+
+func S2Float[T Float](s string) T {
+	i, _ := strconv.ParseFloat(s, 32)
+	return T(i)
 }
