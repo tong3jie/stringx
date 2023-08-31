@@ -65,6 +65,10 @@ func Uint2S[T Uint](i T) string {
 	return strconv.FormatInt(int64(i), 10)
 }
 
+func N2S[T Int | Uint](i T) string {
+	return strconv.FormatInt(int64(i), 10)
+}
+
 func Float2S[T Float](i T) string {
 	v := reflect.ValueOf(i)
 	switch v.Kind() {
